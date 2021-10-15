@@ -1,1 +1,17 @@
+.widget-advanced-note {
+  .filter-notes {
+    height: 56px;
+  }
 
+  .notes {
+    height: calc(100% - 114px - 56px);
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .edit-note {
+    height: 114px;
+    background: #EFF2F7 0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
+}

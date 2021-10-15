@@ -10,7 +10,6 @@ export class WidgetAdvancedNoteComponent implements OnInit {
   @Input() notes!: Note[];
   ownNotes: Note[] = [];
   authors: string[] = [];
-  selection: string = '';
 
 
   constructor() {
@@ -19,10 +18,7 @@ export class WidgetAdvancedNoteComponent implements OnInit {
   ngOnInit(): void {
     this.authors = this.notes.map(note => note.author)
     this.ownNotes = JSON.parse(localStorage.getItem("ownNotes") || '[]');
-    this.notes = [
-      ...this.notes,
-      ...this.ownNotes
-    ].sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1);
+    this.notes.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

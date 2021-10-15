@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*@font-face {
+  font-family: UniversalRegular;
+  src: url('./assets/fonts/Univers-LT-55-Roman.ttf');
+}
+
+@font-face {
+  font-family: UniversalBold;
+  src: url('./assets/fonts/Univers-LT-65-Bold.ttf');
+}
+body{
+  font-family: UniversalRegular;
+}*/
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0E141A1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #667790;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #667790;
+}
