@@ -8,7 +8,7 @@
     </select>
   </form>
 
-  <app-note *ngFor='let note of notes | filter:f.value.selection' [note]='note'></app-note>
-  <app-note *ngFor='let note of ownNotes' [note]='note'></app-note>
+  <app-note *ngFor='let note of notes | filter:f.value.selection' [note]='note' [direction]="'left'"></app-note>
+  <app-note *ngFor='let note of ownNotes' [note]='note' [direction]="'right'"></app-note>
   <app-edit-note (onSubmitHandler)='publish($event)'></app-edit-note>
 </div>

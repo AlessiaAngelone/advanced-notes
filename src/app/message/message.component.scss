@@ -1,0 +1,54 @@
+.message-container {
+  display: inline-block;
+  position: relative;
+  max-width: 1200px;
+  height: auto;
+  width: 100%;
+
+  &.right{
+    background-color: #C2CDDD;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: -7px;
+      left: auto;
+      top: 0px;
+      bottom: auto;
+      border-style: solid;
+      border-color: #C2CDDD transparent transparent transparent;
+      border-width: 20px 8px 0px 0px;
+    }
+  }
+
+  &.left{
+    background-color: #EFF2F7;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -7px;
+      right: auto;
+      top: 0px;
+      bottom: auto;
+      border-style: solid;
+      border-color: #EFF2F7 transparent transparent transparent;
+      border-width: 20px 0px 0px 8px;
+    }
+  }
+
+  .message {
+    color: black;
+    padding: 25px 30px;
+    text-align: left;
+
+    .line-clamp{
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
