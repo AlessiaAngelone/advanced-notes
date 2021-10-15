@@ -1,0 +1,17 @@
+<div class="row mb-4">
+  <div class="col-auto">
+    <!--    <img class="img-responsive" width='40' [src]="'assets/avatar/' + note.imgString + '.png'">-->
+  </div>
+  <div class="col-12 col-md-9">
+    <div class="d-flex justify-content-between mb-2">
+      <div class="name">{{note.author}}</div>
+      <div class="date">{{note.createdAt | date:'dd/MM/yyyy · HH:mm'}}</div>
+    </div>
+    <div class="message-container">
+      <div class="message">
+        <span #message class="line-clamp">{{note.msg}}</span>
+        <div (click)="readMore()" class='text-primary'>Read More</div>
+      </div>
+    </div>
+  </div>
+</div>

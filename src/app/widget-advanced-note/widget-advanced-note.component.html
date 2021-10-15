@@ -1,0 +1,14 @@
+<div class="">
+  <form #f="ngForm">
+    <select name="selection" ngModel>
+      <option value="" disabled>Filter by author</option>
+      <option *ngFor='let author of authors' [ngValue]="author">
+        {{ author }}
+      </option>
+    </select>
+  </form>
+
+  <app-note *ngFor='let note of notes | filter:f.value.selection' [note]='note'></app-note>
+  <app-note *ngFor='let note of ownNotes' [note]='note'></app-note>
+  <app-edit-note (onSubmitHandler)='publish($event)'></app-edit-note>
+</div>
