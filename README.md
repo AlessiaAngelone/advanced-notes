@@ -1,6 +1,6 @@
-# TestTest
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+# advanced-notes
+  
+The application displays “other people” notes. The final user will be able to write text notes and publish it in the notes message list.
 
 ## Development server
 
