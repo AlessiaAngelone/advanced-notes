@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, SimpleChanges} from '@angular/core';
 import {Note} from '../data/types';
+import {NotesService} from '../notes.service';
 
 @Component({
   selector: 'app-widget-advanced-note',
@@ -8,26 +9,25 @@ import {Note} from '../data/types';
 })
 export class WidgetAdvancedNoteComponent implements OnInit {
   @Input() notes!: Note[];
-  ownNotes: Note[] = [];
-  authors: string[] = [];
+  authors: Set<string> = new Set<string>();
 
-
-  constructor() {
+  constructor(public notesService: NotesService) {
   }
 
   ngOnInit(): void {
-    this.authors = this.notes.map(note => note.author)
-    this.ownNotes = JSON.parse(localStorage.getItem("ownNotes") || '[]');
-    this.notes.sort((a, b) => (a.createdAt > b.createdAt) ? 1 : -1);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
+  ngOnChanges({notes}: SimpleChanges) {
+    const others = notes.currentValue
+      .map((note: Note) => note.author)
+      .filter((author: string) => author.toLowerCase() !== 'you')
+    this.authors = new Set(others);
   }
 
   publish(note: any) {
-    this.ownNotes.push(note);
-    let jsonNote = JSON.stringify(this.ownNotes);
-    localStorage.setItem("ownNotes", jsonNote);
+    //update all notes
+    this.notes.push(note);
+    //update localstorage
+    this.notesService.updateStoredNotes(this.notes)
   }
 }

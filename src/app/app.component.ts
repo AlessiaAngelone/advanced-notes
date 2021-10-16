@@ -11,8 +11,8 @@ export class AppComponent {
   notes: Note[] = [];
 
   constructor(notesService: NotesService) {
-    notesService.getNotes().subscribe((response: string) => {
-      this.notes = JSON.parse(response);
+    notesService.getNotes().subscribe((response: Note[]) => {
+      this.notes = response
     })
   }
 

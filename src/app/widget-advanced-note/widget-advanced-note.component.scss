@@ -1,17 +1,31 @@
 .widget-advanced-note {
+  display: flex;
+  flex-direction: column;
   .filter-notes {
-    height: 56px;
+/*    height: 100px;
+    background: transparent linear-gradient(0deg, #FFFFFF00 0%, #FFFFFF 100%) 0 0 no-repeat padding-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc( 100% - 10px);
+    z-index: 1;*/
   }
 
   .notes {
-    height: calc(100% - 114px - 56px);
+    //height: calc(100% - 114px - 56px);
     overflow: hidden;
     overflow-y: scroll;
+    flex-grow: 1;
   }
 
   .edit-note {
-    height: 114px;
-    background: #EFF2F7 0% 0% no-repeat padding-box;
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140px;*/
+    background: #EFF2F7 0 0 no-repeat padding-box;
     opacity: 1;
   }
 }

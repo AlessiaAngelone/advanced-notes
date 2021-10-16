@@ -1,6 +1,8 @@
-<div class="{{direction}} message-container">
+<div class="message-container" [ngClass]="direction.toLowerCase()!=='you' ? 'left' : 'right' ">
   <div class="message">
-    <span class="">{{message}}</span>
-    <button class="btn" type="button" (click)="readMore()">Read More</button>
+    <span #messageChild class="line-clamp">{{message}}</span>
+    <button *ngIf="showMoreButton" class="btn" type="button" (click)="readMore()">
+      {{messageChild.classList.contains("line-clamp") ? 'Read More' : 'Read Less'}}
+    </button>
   </div>
 </div>

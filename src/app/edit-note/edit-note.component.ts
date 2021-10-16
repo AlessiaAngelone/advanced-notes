@@ -22,13 +22,13 @@ export class EditNoteComponent implements OnInit {
     this.noteForm = new FormGroup({
       author : new FormControl("You"),
       createdAt : new FormControl(),
-      imgString : new FormControl("You"),
+      imgString : new FormControl("avatar-lady"),
       msg : new FormControl('', Validators.required)
     })
   }
 
   onSubmit() {
-    this.noteForm.controls.createdAt.setValue(new Date());
+    this.noteForm.controls.createdAt.setValue(new Date().getTime());
     this.onSubmitHandler.emit(this.noteForm.value);
     this.noteForm.controls.msg.setValue("");
   }

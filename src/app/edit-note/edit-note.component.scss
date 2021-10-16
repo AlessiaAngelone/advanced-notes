@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  .form-group {
+    &.btn-group{
+      align-self: end;
+      .btn {
+        background-color: #D3135A;
+        color: white;
+      }
+    }
+
+
+    .form-control {
+      color: #CACFD5;
+      border: 1px solid #C2CDDD;
+      border-radius: 3px;
+      padding-left: 1.25rem;
+      box-shadow: none;
+
+      &::placeholder {
+        color: #CACFD5;
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
 
   transform(notes: Note[], selection: string): Note[] {
     if(!selection) return notes
-    return notes.filter(note => note.author === selection);
+    return notes.filter(note => note.author.toLowerCase() === selection.toLowerCase());
   }
 
 }

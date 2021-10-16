@@ -8,7 +8,6 @@ import {Note} from '../data/types';
 })
 export class NoteComponent implements OnInit {
   @Input() note!: Note;
-  @Input() direction!: string;
 
   constructor() {
   }

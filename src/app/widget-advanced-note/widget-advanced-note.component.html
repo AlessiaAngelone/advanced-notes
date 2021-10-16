@@ -1,16 +1,18 @@
 <div class="widget-advanced-note h-100">
-  <form #f="ngForm" class="filter-notes px-4 pt-4">
-    <select name="selection" ngModel>
-      <option value="" disabled>Filter by author</option>
-      <option *ngFor='let author of authors' [ngValue]="author">{{author}}</option>
-      <option value="">All</option>
-    </select>
+  <form #f="ngForm" class="filter-notes p-4">
+    <div class="form-group">
+      <select class="form-select" name="selection" ngModel>
+        <option value="" disabled>Filter by author</option>
+        <option *ngFor='let author of authors' [ngValue]="author">{{author}}</option>
+        <option value="you">You</option>
+        <option value="">All</option>
+      </select>
+    </div>
   </form>
   <div class="notes p-4">
-    <app-note *ngFor='let note of notes | filter:f.value.selection' [note]='note' [direction]="'left'"></app-note>
-    <app-note *ngFor='let note of ownNotes' [note]='note' [direction]="'right'"></app-note>
+    <app-note *ngFor="let note of notes | filter:f.value.selection" [note]="note"></app-note>
   </div>
   <div class="edit-note p-4">
-  <app-edit-note (onSubmitHandler)='publish($event)'></app-edit-note>
+    <app-edit-note (onSubmitHandler)='publish($event)'></app-edit-note>
   </div>
 </div>

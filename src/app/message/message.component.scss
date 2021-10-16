@@ -5,8 +5,9 @@
   height: auto;
   width: 100%;
 
-  &.right{
+  &.right {
     background-color: #C2CDDD;
+
     &:after {
       content: '';
       position: absolute;
@@ -22,8 +23,9 @@
     }
   }
 
-  &.left{
+  &.left {
     background-color: #EFF2F7;
+
     &:after {
       content: '';
       position: absolute;
@@ -44,11 +46,17 @@
     padding: 25px 30px;
     text-align: left;
 
-    .line-clamp{
+    .line-clamp {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+
+    .btn {
+      font-weight: bold;
+      color: #D3135A;
+      box-shadow: none;
     }
   }
 }
