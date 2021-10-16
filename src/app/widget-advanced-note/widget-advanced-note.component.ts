@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, SimpleChanges, Inject} from '@angular/core';
 import {Note} from '../data/types';
 import {NotesService} from '../notes.service';
 
@@ -11,7 +11,7 @@ export class WidgetAdvancedNoteComponent implements OnInit {
   @Input() notes!: Note[];
   authors: Set<string> = new Set<string>();
 
-  constructor(public notesService: NotesService) {
+  constructor(@Inject(NotesService) public notesService: NotesService) {
   }
 
   ngOnInit(): void {

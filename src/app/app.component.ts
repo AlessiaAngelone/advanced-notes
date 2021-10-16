@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {Note} from './data/types';
 import {NotesService} from './notes.service';
 
@@ -10,7 +10,7 @@ import {NotesService} from './notes.service';
 export class AppComponent {
   notes: Note[] = [];
 
-  constructor(notesService: NotesService) {
+  constructor(@Inject(NotesService) notesService: NotesService) {
     notesService.getNotes().subscribe((response: Note[]) => {
       this.notes = response
     })
