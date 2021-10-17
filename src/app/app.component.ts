@@ -6,16 +6,17 @@ import {NotesService} from './notes.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [NotesService]
 })
 export class AppComponent {
   notes: Note[] = [];
 
-  constructor(@Inject(NotesService) notesService: NotesService) {
-    notesService.getNotes().subscribe((response: Note[]) => {
-      this.notes = response
-    })
+  constructor(@Inject(NotesService) private notesService: NotesService) {
   }
 
   ngOnInit(): void {
+    this.notesService.getNotes().subscribe((response: Note[]) => {
+      this.notes = response
+    })
   }
 }

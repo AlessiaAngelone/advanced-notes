@@ -5,13 +5,14 @@ import {NotesService} from '../notes.service';
 @Component({
   selector: 'app-widget-advanced-note',
   templateUrl: './widget-advanced-note.component.html',
-  styleUrls: ['./widget-advanced-note.component.scss']
+  styleUrls: ['./widget-advanced-note.component.scss'],
+  providers: [NotesService]
 })
 export class WidgetAdvancedNoteComponent implements OnInit {
   @Input() notes!: Note[];
   authors: Set<string> = new Set<string>();
 
-  constructor(@Inject(NotesService) public notesService: NotesService) {
+  constructor(@Inject(NotesService) private notesService: NotesService) {
   }
 
   ngOnInit(): void {

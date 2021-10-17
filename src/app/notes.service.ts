@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Inject} from '@angular/core';
 import {of, Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
@@ -13,7 +13,7 @@ interface DataResponse {
 })
 export class NotesService {
 
-  constructor(private http: HttpClient) {
+  constructor(@Inject(HttpClient) private http: HttpClient) {
   }
 
   getNotes() {
