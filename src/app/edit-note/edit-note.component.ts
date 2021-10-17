@@ -7,17 +7,18 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./edit-note.component.scss']
 })
 export class EditNoteComponent implements OnInit {
+  noteForm!: FormGroup;
+  @Output() onSubmitHandler  = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
     this.initForm();
-
   }
 
-  noteForm!: FormGroup;
-  @Output() onSubmitHandler  = new EventEmitter();
-
+  /**
+   * Init Reactive forms to build noteForm and provide validation
+   */
   initForm() {
     this.noteForm = new FormGroup({
       author : new FormControl("You"),
@@ -27,10 +28,12 @@ export class EditNoteComponent implements OnInit {
     })
   }
 
+  /**
+   * Emits to parent component an event containing the new note
+   */
   onSubmit() {
     this.noteForm.controls.createdAt.setValue(new Date().getTime());
     this.onSubmitHandler.emit(this.noteForm.value);
     this.noteForm.controls.msg.setValue("");
   }
-
 }

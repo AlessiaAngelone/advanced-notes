@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ViewChild, SimpleChanges, AfterViewInit} from '@angular/core';
+import {Component, Input, ViewChild, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -21,11 +21,10 @@ export class MessageComponent implements AfterViewInit {
     })
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-  }
-
+  /**
+   * Add/remove a css class to manage the line-clamp
+   */
   readMore() {
-    console.log('read more');
     this.messageChild.nativeElement.classList.toggle('line-clamp');
   }
 

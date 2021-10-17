@@ -4,6 +4,6 @@
            placeholder="Enter note about the process">
   </div>
   <div class="form-group btn-group">
-    <button class="btn" type="submit">Publish</button>
+    <button class="btn" type="submit" [disabled]="!noteForm.valid">Publish</button>
   </div>
 </form>
