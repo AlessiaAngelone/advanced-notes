@@ -3,22 +3,22 @@ form {
   flex-direction: column;
 
   .form-group {
-    &.btn-group{
-      align-self: end;
+    &.btn-group {
+      align-self: flex-end;
       .btn {
-        background-color: #D3135A;
+        background-color: #d3135a;
         color: white;
       }
     }
 
     .form-control {
-      border: 1px solid #C2CDDD;
+      border: 1px solid #c2cddd;
       border-radius: 3px;
       padding-left: 1.25rem;
       box-shadow: none;
 
       &::placeholder {
-        color: #CACFD5;
+        color: #cacfd5;
       }
     }
   }

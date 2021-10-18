@@ -8,9 +8,8 @@ describe('WidgetAdvancedNoteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WidgetAdvancedNoteComponent ]
-    })
-    .compileComponents();
+      declarations: [WidgetAdvancedNoteComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

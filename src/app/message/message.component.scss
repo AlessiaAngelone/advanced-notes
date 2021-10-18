@@ -6,10 +6,10 @@
   width: 100%;
 
   &.right {
-    background-color: #C2CDDD;
+    background-color: #c2cddd;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 0;
       height: 0;
@@ -18,16 +18,16 @@
       top: 0px;
       bottom: auto;
       border-style: solid;
-      border-color: #C2CDDD transparent transparent transparent;
+      border-color: #c2cddd transparent transparent transparent;
       border-width: 20px 8px 0px 0px;
     }
   }
 
   &.left {
-    background-color: #EFF2F7;
+    background-color: #eff2f7;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 0;
       height: 0;
@@ -36,8 +36,8 @@
       top: 0px;
       bottom: auto;
       border-style: solid;
-      border-color: #EFF2F7 transparent transparent transparent;
-      border-width: 20px 0px 0px 8px;
+      border-color: #eff2f7 transparent transparent transparent;
+      border-width: 20px 0 0 8px;
     }
   }
 
@@ -48,14 +48,14 @@
 
     .line-clamp {
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
     .btn {
       font-weight: bold;
-      color: #D3135A;
+      color: #d3135a;
       box-shadow: none;
     }
   }

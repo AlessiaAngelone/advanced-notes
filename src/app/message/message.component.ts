@@ -1,31 +1,44 @@
-import {Component, Input, ViewChild, AfterViewInit} from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  AfterViewInit,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.scss']
+  styleUrls: ['./message.component.scss'],
 })
-export class MessageComponent implements AfterViewInit {
+export class MessageComponent implements OnInit, AfterViewInit {
   @Input() message!: string;
   @Input() direction!: string;
-  @ViewChild("messageChild") messageChild: any;
-  showMoreButton: boolean = false;
+  @ViewChild('messageChild') messageChild: any;
+  showMoreButton = false;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
+    this.setShowMoreButton();
   }
 
-  ngAfterViewInit() {
-    setTimeout(()=>{
-      this.showMoreButton = this.messageChild.nativeElement.scrollHeight > this.messageChild.nativeElement.clientHeight
-
-    })
+  ngAfterViewInit(): void {
+    this.setShowMoreButton();
   }
 
   /**
    * Add/remove a css class to manage the line-clamp
    */
-  readMore() {
+  readMore(): void {
     this.messageChild.nativeElement.classList.toggle('line-clamp');
   }
 
+  setShowMoreButton(): void {
+    try {
+      this.showMoreButton =
+        this.messageChild.nativeElement.scrollHeight >
+        this.messageChild.nativeElement.clientHeight;
+    } catch (err) {}
+  }
 }

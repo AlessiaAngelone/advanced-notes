@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Note} from './data/types';
+import { Component } from '@angular/core';
+import { Note } from './data/types';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,7 @@ import {Note} from './data/types';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

@@ -1,13 +1,13 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {WidgetAdvancedNoteComponent} from './widget-advanced-note/widget-advanced-note.component';
-import {EditNoteComponent} from './edit-note/edit-note.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { WidgetAdvancedNoteComponent } from './widget-advanced-note/widget-advanced-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 import { MessageComponent } from './message/message.component';
 import { NoteComponent } from './note/note.component';
 import { FilterPipe } from './filter.pipe';
@@ -19,7 +19,7 @@ import { FilterPipe } from './filter.pipe';
     EditNoteComponent,
     MessageComponent,
     NoteComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -27,10 +27,9 @@ import { FilterPipe } from './filter.pipe';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -9,13 +9,13 @@
     justify-content: flex-start;
 
     .form-select {
-      border: 1px solid #C2CDDD;
+      border: 1px solid #c2cddd;
       border-radius: 3px;
       padding-left: 1.25rem;
       box-shadow: none;
 
       &::placeholder {
-        color: #CACFD5;
+        color: #cacfd5;
       }
     }
   }
@@ -27,9 +27,10 @@
     flex-grow: 1;
 
     &::before {
-      content: '';
+      content: "";
       height: 100px;
-      background: transparent linear-gradient(0deg, #FFFFFF00 0%, #FFFFFF 100%) 0 0 no-repeat padding-box;
+      background: transparent linear-gradient(0deg, #ffffff00 0%, #ffffff 100%)
+        0 0 no-repeat padding-box;
       display: block;
       position: absolute;
       top: 86px;
@@ -41,7 +42,7 @@
   }
 
   .edit-note {
-    background: #EFF2F7 0 0 no-repeat padding-box;
+    background: #eff2f7 0 0 no-repeat padding-box;
     opacity: 1;
   }
 }

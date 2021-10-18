@@ -4,13 +4,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-edit-note',
   templateUrl: './edit-note.component.html',
-  styleUrls: ['./edit-note.component.scss']
+  styleUrls: ['./edit-note.component.scss'],
 })
 export class EditNoteComponent implements OnInit {
   noteForm!: FormGroup;
-  @Output() onSubmitHandler  = new EventEmitter();
+  @Output() onSubmitHandler = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.initForm();
@@ -21,11 +21,11 @@ export class EditNoteComponent implements OnInit {
    */
   initForm() {
     this.noteForm = new FormGroup({
-      author : new FormControl("You"),
-      createdAt : new FormControl(),
-      imgString : new FormControl("avatar-lady"),
-      msg : new FormControl('', Validators.required)
-    })
+      author: new FormControl('You'),
+      createdAt: new FormControl(),
+      imgString: new FormControl('avatar-lady'),
+      msg: new FormControl('', Validators.required),
+    });
   }
 
   /**
@@ -34,6 +34,6 @@ export class EditNoteComponent implements OnInit {
   onSubmit() {
     this.noteForm.controls.createdAt.setValue(new Date().getTime());
     this.onSubmitHandler.emit(this.noteForm.value);
-    this.noteForm.controls.msg.setValue("");
+    this.noteForm.controls.msg.setValue('');
   }
 }

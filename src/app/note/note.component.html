@@ -1,11 +1,20 @@
-<div class="row mb-4" [ngClass]="note.author.toLowerCase()!=='you' ? 'flex-row' : 'flex-row-reverse' ">
+<div
+  class="row mb-4"
+  [ngClass]="
+    note.author.toLowerCase() !== 'you' ? 'flex-row' : 'flex-row-reverse'
+  "
+>
   <div class="col-auto avatar pt-4">
-    <img alt="user-avatar" width="40" src="{{'assets/img/'+ note.imgString +'.svg'}}">
+    <img
+      alt="user-avatar"
+      width="40"
+      src="{{ 'assets/img/' + note.imgString + '.svg' }}"
+    />
   </div>
   <div class="col-12 col-md-9 note-content">
     <div class="d-flex justify-content-between mb-2">
-      <div class="name">{{note.author}}</div>
-      <div class="date">{{note.createdAt | date:'dd/MM/yyyy · HH:mm'}}</div>
+      <div class="name">{{ note.author }}</div>
+      <div class="date">{{ note.createdAt | date: "dd/MM/yyyy · HH:mm" }}</div>
     </div>
     <app-message [message]="note.msg" [direction]="note.author"></app-message>
   </div>

@@ -1,9 +1,17 @@
-<form [formGroup]="noteForm" (submit)='onSubmit()'>
+<form [formGroup]="noteForm" (submit)="onSubmit()">
   <div class="form-group pb-3">
-    <input type="text" class="form-control" id="msg" name="msg" formControlName="msg"
-           placeholder="Enter note about the process">
+    <input
+      type="text"
+      class="form-control"
+      id="msg"
+      name="msg"
+      formControlName="msg"
+      placeholder="Enter note about the process"
+    />
   </div>
   <div class="form-group btn-group">
-    <button class="btn" type="submit" [disabled]="!noteForm.valid">Publish</button>
+    <button class="btn" type="submit" [disabled]="!noteForm.valid">
+      Publish
+    </button>
   </div>
 </form>

@@ -4,17 +4,24 @@
       <div class="form-group">
         <select class="form-select" name="selection" ngModel>
           <option value="" disabled>Filter by author</option>
-          <option *ngFor='let author of authors' [ngValue]="author">{{author}}</option>
+          <option *ngFor="let author of authors" [ngValue]="author">
+            {{ author }}
+          </option>
           <option value="you">You</option>
           <option value="">All</option>
         </select>
       </div>
     </form>
   </div>
-  <div class="notes p-4">
-    <app-note *ngFor="let note of notes | filter:f.value.selection" [note]="note"></app-note>
+  <!--  <div #notesChild class="notes p-4" [scrollTop]="notesChild.scrollHeight">-->
+  <div #notesChild class="notes p-4">
+    <app-note
+      #notesChildren
+      *ngFor="let note of notes | filter: f.value.selection"
+      [note]="note"
+    ></app-note>
   </div>
   <div class="edit-note p-4">
-    <app-edit-note (onSubmitHandler)='publish($event)'></app-edit-note>
+    <app-edit-note (onSubmitHandler)="publish($event)"></app-edit-note>
   </div>
 </div>

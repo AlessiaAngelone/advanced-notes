@@ -1,9 +1,9 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {Note} from './data/types';
-import {NgForm} from '@angular/forms';
+import { Pipe, PipeTransform } from '@angular/core';
+import { Note } from './data/types';
+import { NgForm } from '@angular/forms';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
   /**
@@ -12,8 +12,9 @@ export class FilterPipe implements PipeTransform {
    * @param selection
    */
   transform(notes: Note[], selection: string): Note[] {
-    if(!selection) return notes
-    return notes.filter(note => note.author.toLowerCase() === selection.toLowerCase());
+    if (!selection) return notes;
+    return notes.filter(
+      (note) => note.author.toLowerCase() === selection.toLowerCase()
+    );
   }
-
 }

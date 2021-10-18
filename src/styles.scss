@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: UniversalRegular;
-  src: url('./assets/fonts/Univers-LT-55-Roman.ttf');
+  src: url("./assets/fonts/Univers-LT-55-Roman.ttf");
 }
 
 @font-face {
   font-family: UniversalBold;
-  src: url('./assets/fonts/Univers-LT-65-Bold.ttf');
+  src: url("./assets/fonts/Univers-LT-65-Bold.ttf");
   font-weight: bold;
 }
 
@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0E141A1A;
+  background: #0e141a1a;
 }
 
 ::-webkit-scrollbar-thumb {
