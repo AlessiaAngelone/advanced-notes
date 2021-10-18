@@ -17,7 +17,8 @@ export class MessageComponent implements OnInit, AfterViewInit {
   @ViewChild('messageChild') messageChild: any;
   showMoreButton = false;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.setShowMoreButton();
@@ -35,10 +36,13 @@ export class MessageComponent implements OnInit, AfterViewInit {
   }
 
   setShowMoreButton(): void {
-    try {
-      this.showMoreButton =
-        this.messageChild.nativeElement.scrollHeight >
-        this.messageChild.nativeElement.clientHeight;
-    } catch (err) {}
+    setTimeout(() => {
+      try {
+        this.showMoreButton =
+          this.messageChild.nativeElement.scrollHeight >
+          this.messageChild.nativeElement.clientHeight;
+      } catch (err) {
+      }
+    }, 0);
   }
 }
