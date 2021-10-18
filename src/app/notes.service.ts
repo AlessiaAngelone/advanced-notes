@@ -18,7 +18,6 @@ export class NotesService {
 
   constructor(@Inject(HttpClient) private http: HttpClient) {
     this.notes$.subscribe((res) => {
-      console.log('subscriprion', res);
       this.notes = res;
     });
   }

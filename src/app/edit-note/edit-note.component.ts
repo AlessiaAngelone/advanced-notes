@@ -19,7 +19,7 @@ export class EditNoteComponent implements OnInit {
   /**
    * Init Reactive forms to build noteForm and provide validation
    */
-  initForm() {
+  initForm(): void {
     this.noteForm = new FormGroup({
       author: new FormControl('You'),
       createdAt: new FormControl(),
@@ -31,7 +31,7 @@ export class EditNoteComponent implements OnInit {
   /**
    * Emits to parent component an event containing the new note
    */
-  onSubmit() {
+  onSubmit(): void {
     this.noteForm.controls.createdAt.setValue(new Date().getTime());
     this.onSubmitHandler.emit(this.noteForm.value);
     this.noteForm.controls.msg.setValue('');
