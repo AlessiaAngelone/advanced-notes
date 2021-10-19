@@ -24,14 +24,14 @@ export class NotesService {
 
   /**
    * Method to feed a new value to the notes Subject
-   * @param value
+   * @param value: Note[]
    */
   setNotes(value: Note[]): void {
     this.notesSubject.next(value);
   }
 
   /**
-   * Method to retreive all notes, provided from backend and localStorage
+   * Method to retrieve all notes, provided from backend and localStorage
    */
   getNotes(): Observable<void> {
     return this.http.get(`assets/data/data.json`).pipe(
@@ -52,7 +52,7 @@ export class NotesService {
 
   /**
    * Method to update own notes in localStorage and trigger updated notes to all subscribers
-   * @param newNote
+   * @param newNote: Note
    */
   updateNotes(newNote: Note): void {
     // update all notes with the òast one

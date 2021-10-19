@@ -35,6 +35,9 @@ export class MessageComponent implements OnInit, AfterViewInit {
     this.messageChild.nativeElement.classList.toggle('line-clamp');
   }
 
+  /**
+   * Method to show/hide the read-more button
+   */
   setShowMoreButton(): void {
     setTimeout(() => {
       try {

@@ -5,7 +5,6 @@ import {
   AfterViewInit,
   ViewChildren,
   ViewChild,
-  QueryList,
 } from '@angular/core';
 import { Note } from '../data/types';
 import { NotesService } from '../notes.service';
@@ -55,7 +54,7 @@ export class WidgetAdvancedNoteComponent implements OnInit, AfterViewInit {
 
   /**
    * Method to create author list from available notes
-   * @param notes
+   * @param notes: Note[]
    */
   setAuthors(notes: Note[]): void {
     const others = notes
